@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import GameCard from "../../components/GameCard";
-import Header from "../../components/Header";
-import GamePrompt from "../../components/GamePrompt";
-import API from "../../utils/API";
-import "./style.css";
+import GameCard from "../components/Gamecard";
+import Header from "../components/Header";
+import API from "../utils/API";
+
 
 class GameContainer extends Component {
     state = {
@@ -73,11 +72,8 @@ class GameContainer extends Component {
     render() {
         return (
             <div>
-                <Header score={this.state.score} highScore={this.state.highScore} />
-                <div className="container">
-                    <div className="row justify-content-center">
-                        <GamePrompt correctGuess={this.state.correctGuess} />
-                    </div>
+                <Header score={this.state.score} highScore={this.state.highScore} correctGuess={this.state.correctGuess}/>
+                <div className="container mt-5">
                     <div className={(this.state.correctGuess === true || this.state.correctGuess === null) ? "row justify-content-center"  : "row justify-content-center shake"}>
                         {this.state.gameCards.map(card => {
                             return (
