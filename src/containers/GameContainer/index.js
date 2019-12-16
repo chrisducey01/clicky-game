@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import GameCard from "../components/GameCard";
-import Header from "../components/Header";
-import GamePrompt from "../components/GamePrompt";
-import API from "../utils/API";
+import GameCard from "../../components/GameCard";
+import Header from "../../components/Header";
+import GamePrompt from "../../components/GamePrompt";
+import API from "../../utils/API";
+import "./style.css";
 
 class GameContainer extends Component {
     state = {
@@ -77,7 +78,7 @@ class GameContainer extends Component {
                     <div className="row justify-content-center">
                         <GamePrompt correctGuess={this.state.correctGuess} />
                     </div>
-                    <div className="row justify-content-center">
+                    <div className={(this.state.correctGuess === true || this.state.correctGuess === null) ? "row justify-content-center"  : "row justify-content-center shake"}>
                         {this.state.gameCards.map(card => {
                             return (
                                 <div className="col-md-3 my-2">
