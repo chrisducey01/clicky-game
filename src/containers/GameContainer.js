@@ -22,7 +22,6 @@ class GameContainer extends Component {
     getPhotos() {
         API.search("pokemon", this.state.numOfCards)
             .then(res => {
-                console.log(res.data.data);
                 const tempArr = [];
                 res.data.data.forEach(sticker => {
                     tempArr.push({ imgSrc: sticker.images.fixed_width_still.url, id: sticker.id });
@@ -36,7 +35,6 @@ class GameContainer extends Component {
 
     handleClick = id => {
         if (this.state.chosenCards.includes(id)) {
-            console.log(`You lose!  You already chose that card dummy! Id: ${id}`);
             this.setState(
                 {
                     highScore: this.state.score > this.state.highScore ? this.state.score : this.state.highScore,
@@ -47,7 +45,6 @@ class GameContainer extends Component {
             );
         }
         else {
-            console.log(`Great job!  You haven't picked that card yet.  Id: ${id}`);
             this.setState(
                 {
                     chosenCards: this.state.chosenCards.concat(id),

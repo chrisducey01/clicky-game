@@ -10,11 +10,17 @@ body{
 
 img{
   width:100%;
-  height:100%;
+  align-content: stretch;
+  display: flex;
 }
 
 .card{
   height:100%;
+}
+
+.card-body{
+  align-content: stretch;
+  display: flex;
 }
 
 .card:hover{
@@ -43,6 +49,7 @@ img{
   top:0;
   right:0;
   z-index: 999;
+  min-height: 104px;
 }
 
 .navbar ul{
@@ -77,11 +84,15 @@ img{
   width: 100%;
   background-color: gray;
   font-size: 24px;
+  font-family: 'Lilita One', cursive;
 }
 
 @media screen and (max-width: 991px){
   body{
     padding-top: 80px;
+  }
+  .navbar{
+    min-height: 80px;
   }
   .navbar .brand{
     font-size: 32px;
@@ -97,6 +108,9 @@ img{
 @media screen and (max-width: 575px){
   body{
     padding-top: 68px;
+  }
+  .navbar{
+    min-height: 68px;
   }
   .navbar .brand{
     font-size: 24px;
