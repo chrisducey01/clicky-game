@@ -101,7 +101,7 @@ img{
     font-size: 24px;
   }
   .prompt{
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -120,6 +120,6 @@ img{
   }
   .prompt{
     min-height: 32px;
-    font-size: 20px;
+    font-size: 16px;
   }
 }
