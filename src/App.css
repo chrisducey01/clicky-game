@@ -3,7 +3,9 @@
 }
 
 body{
-  background: lightslategray;
+  background-image: url("./doodles.png");
+  padding-top: 104px;
+  color: white;
 }
 
 img{
@@ -34,20 +36,76 @@ img{
 }
 
 .navbar{
-  background: blue !important;
+  background: rgb(0, 159, 252) !important;
+  /* font-size: calc(10px + 14 * (100vw - 320px)/ 800); */
+  position: fixed;
+  left:0;
+  top:0;
+  right:0;
+  z-index: 999;
 }
 
 .navbar ul{
+  display: inline-flex;
   width: 100%;
   margin: 0;
   padding: 0;
+  justify-content: flex-start;
 }
 
 .navbar li{
-  display: inline-block;
-  width: 33%;
+  display: inline-flex;
   text-align: center;
-  padding: 26px;
-  color: yellow;
-  font-size: 23px;
+  padding: 8px;
+  color: white;
+  align-self: center;
+}
+
+.navbar .brand{
+  font-family: 'Lobster', cursive;
+  font-size: 48px;
+}
+
+.score{
+  font-family: 'Dosis', sans-serif;
+  font-size: 36px;
+  align-items: flex-end;
+}
+
+.prompt{
+  min-height: 50px;
+  width: 100%;
+  background-color: gray;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 991px){
+  body{
+    padding-top: 80px;
+  }
+  .navbar .brand{
+    font-size: 32px;
+  }
+  .score{
+    font-size: 24px;
+  }
+  .prompt{
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 575px){
+  body{
+    padding-top: 68px;
+  }
+  .navbar .brand{
+    font-size: 24px;
+  }
+  .score{
+    font-size: 18px;
+  }
+  .prompt{
+    min-height: 32px;
+    font-size: 20px;
+  }
 }

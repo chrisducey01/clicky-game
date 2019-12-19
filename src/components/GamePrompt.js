@@ -6,7 +6,7 @@ function GamePrompt(props) {
     else if (props.correctGuess != null) msg = "You guessed incorrectly...";
 
     return (
-        <div>{msg}</div>
+        <p className="p-2 p-md-3 m-0">{msg}</p>
     )
 }
 
