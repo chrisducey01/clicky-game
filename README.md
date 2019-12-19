@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Clicky-Game
 
-## Available Scripts
+Clicky-Game is a single page web-app using the React framework to render the page.  All functionality is client-side.  Upon page load, the app will make an API call out to Giphy and get 12 static images based on the `pokemon` keyword and populate them into cards on the page.  
 
-In the project directory, you can run:
+## Rules of the Game
 
-### `yarn start`
+This is a pretty straightforward memory challenge game.  Click on an image only once.  Each time you click an image, and it hasn't been clicked before, your score will go up by one point.  If you click on an image more than once, that round is over.  If you beat the high score, you take the lead!  To make things interesting, every time you click an image, all of the images will be randomly shuffled.  Good luck!
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Contributing to development
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Prerequisites
 
-### `yarn test`
+1.  Giphy API Key
+    * Needed to grab images using an AJAX call (via Axios) to the Giphy API
+    * Visit <https://developers.giphy.com/docs/api#quick-start-guide> to sign-up for a key
+    * Write down your API key since you'll need it later
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.  Node installed on your local machine
 
-### `yarn build`
+### Installing
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Follow the instructions in this section to get the app setup to run on your machine.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1.  Clone the git project to your machine (example below is using ssh)
+    ``` bash
+    git clone git@github.com:chrisducey01/clicky-game.git
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2.  Install the node module dependencies from the package.json file
+    ``` bash
+    npm install
+    ```
 
-### `yarn eject`
+3.  Update the APIKEY value in the `util/API.js` file to the one you created from Giphy
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Future Updates
+This section includes functionality I would like to include in the future but haven't been able to add yet.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* Search bar for user to enter phrase to search Giphy for images.  This would populate the image cards dynamically versus hard-coded to pokemon
+* User input to specify the amount of images to return versus the hard-coded value of 12
+* Being able to persist high user scores and names to compete with friends
+* A splash page for rules to make it more explicit for a new user
+* Highlight the GamePrompt text and score when they change based on a user click on an image
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Running the app
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The client development server is started on the command line using node.  This is a React app and will automatically restart when you save any changes to your files.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Usage
+``` bash
+npm run start
+```
 
-### Code Splitting
+## Deploying to Github Pages
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+If you want to deploy a production version to Github Pages, there is a `gh-pages` package installed as part of the package.json packages that will help with that deploy.  Follow the steps below:
 
-### Analyzing the Bundle Size
+1.  Update the package.json file and change the "homepage" entry
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    Update the URL to your project site on Github Pages
+    ```
+    "homepage": "https://chrisducey01.github.io/clicky-game/",
+    ```
 
-### Making a Progressive Web App
+2.  Run the command to use gh-pages to deploy to the Github Pages site
+    ```
+    npm run deploy
+    ```
+    * This will run the deploy script from the package.json file which will build the react app and then push it to Github Pages.  
+    * This will publish it based on the homepage url set in step 1.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Authors
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* **Christopher Ducey** - *Initial work* - [chrisducey01](https://github.com/chrisducey01)
